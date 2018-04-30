@@ -3,3 +3,4 @@ A makefile is included for compiling the program on linux.
 Once compiled, the executable, "escapeGame", is produced.
 Throughout the game, the user is presented with a series of numbered options.
 The user can enter the number and hit enter to proceed.
+A zip file is also included if you care to download the game.
