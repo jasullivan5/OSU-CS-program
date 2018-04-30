@@ -1,1 +1,3 @@
-
+This assigment was designed to get us familiar with multithreading as well as reading and writing to and from files with C programs. The first program, sullijos.buildrooms.c creates a file that contains the information for a series of rooms. These rooms are randomly assigned connections to one another. Start and end rooms are also randomly chosen. Next, sullijos.adventure.c is run. It reads the room information from the file and starts the game. The user must find the end room by entering the name of a room they wish to travel to from the available options.
+The program also uses mutexes and mutlithreading that allow the user to type "time" to get the current time and write that time to file.
+To compile the programs in linux, type "gcc -o buildrooms sullijos.buildrooms.c" and hit enter, then type "gcc -o adventure sullijos.adventure.c" and hit enter. The executables "buildrooms" and "adventure" will be produced. Run "buildrooms" before running "adventure".
