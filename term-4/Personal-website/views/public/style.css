@@ -1,0 +1,96 @@
+html, body{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#nav-bar{
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  height: 50px;
+  width: 1000px;
+}
+a{
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: inline-block;
+}
+.nav-buttons{
+  color: white;
+  background-color: gray;
+}
+.link-buttons{
+  color: black;
+  background-color: lightGray;
+}
+#content{
+  width: 1040px;
+  margin: auto;
+}
+#slideshow-div{
+  width: 520px;
+  height: 640px;
+  overflow: hidden;
+  margin-right: 0px;
+  float: left;
+}
+.slides{
+  display: none;
+  width: 520px;
+  height: 780px;
+}
+#greeting{
+  float: left;
+  width: 420px;
+  height: 240px;
+  padding: 200px 50px 200px 50px;
+  background-color: gray;
+}
+#about-me-div{
+  float: left;
+  width: 420px;
+  height: 390px;
+  padding: 50px 50px 200px 50px;
+  background-color: gray;
+}
+#box-head{
+  text-align: center;
+  margin-bottom: 0px;
+}
+#scrollbox{
+  padding: 5px 18px 0px 20px;
+  border-style: solid;
+  height: 425px;
+  overflow-y: scroll;
+  margin-top: 0px;
+  background-color: lightGray;
+}
+#scrollbox h2{margin-top: 0px;}
+#resume-content{
+  padding: 50px 30px 30px 30px;
+  width: 980px;
+  margin: auto;
+  background-color: gray;
+  text-align: center;
+}
+#resume{
+  margin-top: 30px;
+  width: 75%;
+}
+#contact-content{
+padding: 100px 270px 0px 270px;
+  background-color: gray;
+  width: 500px;
+  margin: auto;
+  height: 540px;
+}
+#info{
+  background-color: lightGray;
+  border-style: solid;
+}
+#info h1{text-align: center;}
+#info h2{padding-left: 25%;}
+#info li{margin: 25px 0px 0px 0px;}

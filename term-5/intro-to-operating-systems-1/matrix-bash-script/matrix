@@ -1,0 +1,337 @@
+#!/bin/bash
+# AUTHOR
+#	Joseph Sullivan
+# COURSE / ASSIGNMENT
+#	CS344 / Program 1
+# DATE
+#	1/22/2018
+# SCRIPT NAME
+#	matrix - performs various operations on matrices with tab separated columns
+# SYNOPSIS
+#	matrix MATRIX_FUNCTION (takes input from stdin)
+#	matrix MATRIX_FUNCTION FILE
+#	matrix MATRIX_FUNCTION FILE FILE
+# DESCRIPTION
+#	The matrix script has functions for outputing the dimensions, the transpision,
+#	and the	mean vector of a matrix. These functions accept input from a single file 
+#	or from stdin. The matrix script also has functions for adding and multiplying two 
+#	matrices. These functions require two files as arguments. The format for input is tab
+#	delimited rows of integers with a newline characters at the end of each row.
+
+###################################################################################
+#
+#                               HELPER FUNCTIONS
+#
+###################################################################################
+validateArgs() {
+	# NAME
+	#	validateArgs - validates file arguemnts
+	# SYNOPSIS
+	#	validateArgs FUNC_NAME ARGS_ALLOWED ARGS_RECEIVED
+	# DESCRIPTION
+	#	Output Error message to stderr if number of arguments sent to function don't
+	#	match allowed number of arguments or arguments are not readable files.
+
+	argsAllowed=$(( $2 + 2 )) # +2 to account for func name and args allowed
+
+	# if number of args sent to func doesn't match number of args allowed
+	# send error message to stderr and exit script
+	if [ $# -ne $argsAllowed ]
+	then
+		echo "Error: matrix function $1() can only accept $2 argument(s)" 1>&2
+		exit 1
+
+	# else send error message to stderr and exit script if any arg, other than
+	# func name and args allowed, is not a readable file
+	else
+		for i in "${@:3}"
+		do
+			if [ ! -r $i ]
+			then
+				echo "Error: file $i does not exist or is unreadable" 1>&2
+				exit 1
+			fi
+		done
+	fi
+}
+
+stdinOrArgs() {
+	# NAME
+	#	stdinOrArgs - cats stdin or file arg to temp file
+	# SYNOPSIS
+	#	stdinOrArgs FUNC_NAME ARGS_ALLOWED ARGS_RECEIVED
+	# DESCRIPTION
+	#	cat stdin to temp file if func received no args, 
+	#	otherwise validate arg and cat it to a temp file
+
+	if [ $# -eq 2 ] # +2 to account for func name and args allowed
+	then
+		cat /dev/stdin > temp$$
+	else
+		validateArgs "$@"
+		cat $3 > temp$$
+	fi
+	_RET="temp$$" # set file name to global return variable for use in calling function
+}
+
+rowCount() {
+	# NAME
+	#	rowCount - outputs number of rows in a file
+	# SYNOPSIS
+	#	rowCount FILE_NAME
+	# DESCRIPTION
+	#	Redirects file contents to stdin which is read by wc -l, allowing the
+	#	number of rows in the file to be output without the file name
+	wc -l < $1
+}
+
+colCount() {
+	# NAME
+	#	colCount - outputs number of columns in a file
+	# SYNOPSIS
+	#	colCount FILE_NAME
+	# DESCRIPTION
+	#	Reads a line from file then outputs the word count of the line
+	#	which is equivalent to the number of columns for a matrix
+	read lineVar < $1
+	echo -n "$lineVar" | wc -w
+}
+
+roundDivision() {
+	# NAME
+	#	roundDivision - rounds result of int division away from zero
+	# SYNOPSIS
+	#	roundDivision NUMERATOR DENOMINATOR
+	# DESCRIPTION
+	#	divides first argument by second, rounding half away from zero,
+	#	then outputs an integer quotient
+	quotient=$(( ($1+($2/2)*(($1>0)*2-1))/$2 ))
+	echo -n "$quotient"
+}
+
+sumVar() {
+	# NAME
+	#	sumVar - sums the numbers in a variable
+	# SYNOPSIS
+	#	sumVar VARIABLE
+	# DESCRIPTION
+	#	variable argument must contain white space seperated numbers to be summed,
+	#	sums all the numbers in a variable and outputs the result
+	sum=0
+	for i in $1
+	do
+		sum=$(($sum + $i))
+	done
+	echo -n "$sum"
+}
+
+###################################################################################
+#
+#                                MATRIX FUNCTIONS
+#
+###################################################################################
+
+dims() {
+	# NAME
+	#	dims - outputs dimensions of a matrix
+	# SYNOPSIS
+	#	matrix dims (takes input from stdin)
+	#	matrix dims FILE
+	# DESCRIPTION
+	#	calculates and outputs the number of rows and columns in a matrix file
+	
+	# validate arg if one exists, then assign input from stdin or arg to temp file
+	stdinOrArgs "dims" 1 "$@" ; dimsTemp=$_RET
+
+	# calculate number of rows and columns
+	numRows=$(rowCount "$dimsTemp")
+	numCols=$(colCount "$dimsTemp")
+
+	# output the number of rows and columns and remove temp file
+	echo "$numRows $numCols"
+	rm -f "$dimsTemp"
+}
+
+transpose() {
+	# NAME
+	#	tranpose - outputs a transposed matrix
+	# SYNOPSIS
+	#	matrix transpose (takes input from stdin)
+	#	matrix transpose FILE
+	# DESCRIPTION
+	#	outputs matrix with rows of a matrix converted to columns in same order
+
+	# validate arg if one exists, then assign input from stdin or arg to temp file
+	stdinOrArgs "transpose" 1 "$@" ; transTemp=$_RET
+
+	# cut each column from matrix and output as a tab seperated row
+	numCols=$(colCount "$transTemp")
+	for ((i = 1; i <= $numCols; i++)) ; do
+		column=$(cut -f $i "$transTemp")
+		echo $column | tr ' ' '\t' # echoing column without "" replaces \n with ' '
+	done
+	
+	# remove temp file
+	rm -f "$transTemp"
+}
+
+mean() {
+	# NAME
+	#	mean - output the mean vector of a matrix
+	# SYNOPSIS
+	#	matrix mean (takes input from stdin)
+	#	matrix mean FILE
+	# DESCRIPTION
+	#	sums each column and divides column sums by the number of rows, then
+	#	outputs column means as tab separated row
+
+	# validate arg if one exists, then assign input from stdin or arg to temp file
+	stdinOrArgs "mean" 1 "$@" ; meanTemp=$_RET
+	
+	# get row and column counts
+	numCols=$(colCount "$meanTemp")
+	numRows=$(rowCount "$meanTemp")
+
+	# sum the numbers of each column and divide each sum by the number of rows
+	for ((i = 1; i <= $numCols; i++)) ; do
+		column=$(cut -f $i $1)
+		sum=$(sumVar "$column")
+		mean=$(roundDivision $sum $numRows)
+		matMean="$matMean $mean" # sums stored in space separated string
+	done
+
+	# output the mean of each column as a tab separated row and remove temp file
+	echo $matMean | tr ' ' '\t'
+	rm -f "$meanTemp"
+}
+
+add() {
+	# NAME
+	#	add - outputs the sum of two matrices
+	# SYNOPSIS
+	#	matrix add FILE FILE
+	# DESCRIPTION
+	#	converts rows of each matrix into arrays for summing, each number in a row
+	#	is summed with the corresponding number of the othe matrix, then the summed
+	#	rows are output with tab separation
+	
+	# validate that 2 and only 2 args were received
+	# and that they are existing and readable files
+	validateArgs "add" 2 "$@"
+
+	# get row and column counts for each matrix
+	m1Rows=$(rowCount $1)
+	m2Rows=$(rowCount $2)
+	m1Cols=$(colCount $1)
+	m2Cols=$(colCount $2)
+
+	# if dimensions of matrices don't match, output error to stderr and exit script
+	if [ $m1Rows -ne $m2Rows ] || [ $m1Cols -ne $m2Cols ]
+	then
+		echo "Error: matrices with different dimensions cannot be summed" 1>&2
+		exit 1
+	fi
+
+	# read a line from each matrix and convert them into arrays
+	while read m1Line <&3 && read m2Line <&4
+	do
+		m1Line=(${m1Line[@]})
+		m2Line=(${m2Line[@]})
+		lineSum="" # clear var that holds the sum of each line
+
+		# Sum numbers from one matrix line with corresponding numbers of the other
+		for ((i = 0; i < $m1Cols; i++)) ; do
+			sum=$(( ${m1Line[$i]} + ${m2Line[$i]} ))
+			lineSum="$lineSum $sum" # sums stored as space separated string
+		done
+
+		# output each line of sums as a tab separated row
+		echo $lineSum | tr ' ' '\t'
+	done 3<$1 4<$2
+}
+
+multiply() {
+	# NAME
+	#	multiply - outputs the product of two matrices
+	# SYNOPSIS
+	#	matrix multiply FILE FILE
+	# DESCRIPTION
+	#	transposes matrix 2, then converts rows of matrix 1 and transposed matrix 2
+	#	to arrays. Elements of each array are multiplied with corresponding element
+	#	of the other. Products from each row are summed and stored until row from
+	#	one has been multiplied with each row of transposed matrix 2. Finally,
+	#	products are output as rows of final product matrix
+
+	# validate that 2 and only 2 args were received
+	# and that they are existing and readable files
+	validateArgs "multiply" 2 "$@"
+
+	# get row and column counts for each matrix
+	m1Rows=$(rowCount $1)
+	m2Rows=$(rowCount $2)
+	m1Cols=$(colCount $1)
+	m2Cols=$(colCount $2)
+
+	# if the row count of one matrix does not match the column count of the other,
+	# output an error message to stderr and exit script
+	if [ $m1Rows -ne $m2Cols ] && [ $m1Cols -ne $m2Rows ]
+	then
+		echo "Error: matrices can only be multiplied if the row count of one matches the column count of the other" 1>&2
+		exit 1
+	fi
+
+	# tranpose the second matrix
+	mat2Trans=$(transpose $2)
+
+	# Convert the first rows of matrix 1 into arrays
+	while read m1Line
+	do
+		m1Line=(${m1Line[@]})
+
+		prodMatRow="" # clear var that holds row of final product matrix
+		
+		# convert rows of transposed matrix 2 into arrays
+		while read m2Line
+		do
+			m2Line=(${m2Line[@]})
+
+			lineProd="" # clear var that holds row of products from each line
+			
+			# multiply each number from line of matrix 1 with corresponding 
+			# number from line of transposed matrix 2 and store product in
+			# space separated string
+			for ((i = 0; i < $m1Cols; i++)) ; do
+				product=$(( ${m1Line[$i]} * ${m2Line[$i]} ))		
+				lineProd="$lineProd $product"
+			done
+
+			# sum products from line-to-line multiplication
+			# and store in space separated string
+			sum=$(sumVar "$lineProd")
+			prodMatRow="$prodMatRow $sum"
+		done <<<"$mat2Trans"
+		
+		# output row of final product matrix
+		echo $prodMatRow | tr ' ' '\t'
+	done <$1
+}
+
+# trap statement alerts user if signal has interupted script,
+# attempts to delete temporary file, then exits script
+trap "rm -f temp$$; echo 'Signal received: deleting temp file and exiting matrix'; exit 1" INT HUP TERM
+
+# if first argument does not match name of a public function,
+# output error message and exit script
+if [ $1 != "dims" ] \
+&& [ $1 != "transpose" ] \
+&& [ $1 != "mean" ] \
+&& [ $1 != "add" ] \
+&& [ $1 != "multiply" ]
+then
+	echo "Error: $1 is not a matrix function" 1>&2
+	exit 1
+
+# otherwise call function with remaining arguments
+else
+	$1 "${@:2}"
+fi

@@ -1,0 +1,13 @@
+<!doctype html>
+<h1>Update {{actor.firstName}} {{actor.lastName}}:</h1>
+<form id="updateActor" action="/actors" method="post">
+	First name: <input type="text" name="firstName" value="{{actor.firstName}}"><br>
+	Last name: <input type="text" name="lastName" value="{{actor.lastName}}"><br>
+	Character: <select name="characterID" id="characterSelect">
+		{{#each characters}}
+		<option value={{ID}}>{{firstName}} {{lastName}} {{alias}}</option>
+		{{/each}}
+	</select><br>
+</form>
+<button onclick="updateActor({{actor.ID}})">Update</button>
+<script defer>selectCharacter({{actor.characterID}});</script>

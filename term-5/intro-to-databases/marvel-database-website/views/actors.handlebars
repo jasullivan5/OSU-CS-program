@@ -1,0 +1,42 @@
+<!doctype html>
+<select id="tableSelect">
+	<option selected disabled hidden>Choose A Table</option>
+	{{#each tables}}
+	<option value={{table_name}}>{{table_name}}</option>
+	{{/each}}
+</select><br>
+<h1>Actors:</h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Character First Name</th>
+		<th>Character Last Name</th>
+		<th>Character Alias</th>
+	</thead>
+	<tbody>
+		{{#each actors}}
+		<tr>
+			<td>{{firstName}}</td>
+			<td>{{lastName}}</td>
+			<td>{{cFirstName}}</td>
+			<td>{{cLastName}}</td>
+			<td>{{alias}}</td>
+			<td id="delete"><button onclick="deleteActor({{ID}})">Delete</button></td>
+			<td id="update"><a href="/actors/{{ID}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+	<form id="addActor" action="/actors" method="post">
+		Add Actor:<br>
+		First name: <input type="text" name="firstName"><br>
+		Last name: <input type="text" name="lastName"><br>
+		Plays: <select name="characterID">
+			<option selected disabled hidden>Choose a Character</option>
+			{{#each characters}}
+			<option value={{ID}}>{{firstName}} {{lastName}} {{alias}}</option>
+			{{/each}}
+		</select><br>
+		<input type="submit" value="Submit">
+	</form>
+</table>

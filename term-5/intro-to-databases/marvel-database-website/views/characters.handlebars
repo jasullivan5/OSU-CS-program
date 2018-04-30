@@ -1,0 +1,45 @@
+<!doctype html>
+<select id="tableSelect">
+	<option selected disabled hidden>Choose A Table</option>
+	{{#each tables}}
+	<option value={{table_name}}>{{table_name}}</option>
+	{{/each}}
+</select><br>
+<h1>Characters:</h1>
+
+View characters with superpower:<select id="superpowerSelect" onchange="superpowerFilter(getElementById('superpowerSelect').value)">
+	<option value="all">(all characters)</option>
+	{{#each superpowers}}
+	<option value={{ID}}>{{name}}</option>
+	{{/each}}
+</select><br><br>
+<script defer>selectSuperpower("{{selection}}");</script>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Alias</th>
+		<th>Species</th>
+	</thead>
+	<tbody>
+		{{#each characters}}
+		<tr>
+			<td>{{firstName}}</td>
+			<td>{{lastName}}</td>
+			<td>{{alias}}</td>
+			<td>{{species}}</td>
+			<td id="delete"><button onclick="deleteCharacter({{ID}})">Delete</button></td>
+			<td id="update"><a href="/characters/{{ID}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+	<form id="addCharacter" action="/characters" method="post">
+		Add Character:<br>
+		First name: <input type="text" name="firstName"><br>
+		Last name: <input type="text" name="lastName"><br>
+		Alias: <input type="text" name="alias"><br>
+		Species: <input type= "text" name="species"><br>
+		<input type="submit" value="Submit">
+	</form>
+</table>
+		

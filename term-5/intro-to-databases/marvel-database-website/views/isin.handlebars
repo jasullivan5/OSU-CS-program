@@ -1,0 +1,44 @@
+<!doctype html>
+<select id="tableSelect">
+	<option selected disabled hidden>Choose A Table</option>
+	{{#each tables}}
+	<option value={{table_name}}>{{table_name}}</option>
+	{{/each}}
+</select><br>
+<h1>Character is in Film Relationship:</h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Alias</th>
+		<th>Film Title</th>
+	</thead>
+	<tbody>
+		{{#each isin}}
+		<tr>
+			<td>{{firstName}}</td>
+			<td>{{lastName}}</td>
+			<td>{{alias}}</td>
+			<td>{{title}}</td>
+			<td id="delete"><button onclick="deleteIsIn({{characterID}}, {{filmID}})">Delete</button></td>
+			<td id="update"><a href="/isin/{{characterID}}/{{filmID}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+	<form id="addIsIn" action="/isin" method="post">
+		Add Relationship:<br>
+		<select name="characterID">
+			<option selected disabled hidden>Choose a character</option>
+			{{#each characters}}
+			<option value={{ID}}>{{firstName}} {{lastName}} {{alias}}</option>
+			{{/each}}
+		</select> is in
+		<select name="filmID">
+			<option selected disabled hidden>Choose a Film</option>
+			{{#each films}}
+			<option value={{ID}}>{{title}}</option>
+			{{/each}}
+		<select>
+		<input type="submit" value="Submit">
+	</form>
+</table>

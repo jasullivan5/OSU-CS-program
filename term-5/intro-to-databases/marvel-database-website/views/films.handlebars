@@ -1,0 +1,43 @@
+<!doctype html>
+<select id="tableSelect">
+	<option selected disabled hidden>Choose A Table</option>
+	{{#each tables}}
+	<option value={{table_name}}>{{table_name}}</option>
+	{{/each}}
+</select><br>
+<h1>Films:</h1>
+<table>
+	<thead>
+		<th>Title</th>
+		<th>Release Date</th>
+		<th>Opening Weekend</th>
+		<th>Director First Name</th>
+		<th>Director Last Name</th>
+	</thead>
+	<tbody>
+		{{#each films}}
+		<tr>
+			<td>{{title}}</td>
+			<td>{{releaseDate}}</td>
+			<td>${{openingWeekend}}</td>
+			<td>{{firstName}}</td>
+			<td>{{lastName}}</td>
+			<td id="delete"><button onclick="deleteFilm({{ID}})">Delete</button></td>
+			<td id="update"><a href="/films/{{ID}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+	<form id="addFilm" action="/films" method="post">
+		Add Film:<br>
+		Title: <input type="text" name="title"><br>
+		Release Date: <input type="date" name="releaseDate"><br>
+		Opening Weekend: $<input type="number" name="openingWeekend"><br>
+		Director: <select name="directorID">
+			<option selected disabled hidden>Choose a Director</option>
+			{{#each directors}}
+			<option value={{ID}}>{{firstName}} {{lastName}}</option>
+			{{/each}}
+		</select><br>
+		<input type="submit" value="Submit">
+	</form>
+</table>

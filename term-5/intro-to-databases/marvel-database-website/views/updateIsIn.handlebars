@@ -1,0 +1,17 @@
+<!doctype html>
+<h1>Update {{character.firstName}} {{character.lastName}} {{character.alias}} is in {{film.title}}:</h1>
+<form id="updateIsIn" action="/isin" method="post">
+	<select name="characterID" id="characterSelect">
+		{{#each characters}}
+		<option value={{ID}}>{{firstName}} {{lastName}} {{alias}}</option>
+		{{/each}}
+	</select> is in
+	<select name="filmID" id="filmSelect">
+		{{#each films}}
+		<option value={{ID}}>{{title}}</option>
+		{{/each}}
+	</select>
+</form>
+<button onclick="updateIsIn({{character.ID}}, {{film.ID}})">Update</button>
+<script defer>selectCharacter({{character.ID}});</script>
+<script defer>selectFilm({{film.ID}});</script>

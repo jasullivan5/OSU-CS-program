@@ -1,0 +1,31 @@
+<!doctype html>
+<select id="tableSelect">
+	<option selected disabled hidden>Choose A Table</option>
+	{{#each tables}}
+	<option value={{table_name}}>{{table_name}}</option>
+	{{/each}}
+</select><br>
+<h1>Directors:</h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+	</thead>
+	<tbody>
+		{{#each directors}}
+		<tr>
+			<td>{{firstName}}</td>
+			<td>{{lastName}}</td>
+			<td id="delete"><button onclick="deleteDirector({{ID}})">Delete</button></td>
+			<td id="update"><a href="/directors/{{ID}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+	<form id="addDirector" action="/directors" method="post">
+		Add Director:<br>
+		First name: <input type="text" name="firstName"><br>
+		Last name: <input type="text" name="lastName"><br>
+		<input type="submit" value="Submit">
+	</form>
+
+</table>

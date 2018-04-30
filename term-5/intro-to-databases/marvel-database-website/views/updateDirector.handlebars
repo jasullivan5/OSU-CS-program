@@ -1,0 +1,7 @@
+<!doctype html>
+<h1>Update {{director.firstName}} {{director.lastName}}:</h1>
+<form id="updateDirector" action="/directors" method="post">
+	First name: <input type="text" name="firstName" value="{{director.firstName}}"><br>
+	Last name: <input type="text" name="lastName" value="{{director.lastName}}"><br>
+</form>
+<button onclick="updateDirector({{director.ID}})">Update</button>

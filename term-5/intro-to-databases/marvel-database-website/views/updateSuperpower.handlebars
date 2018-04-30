@@ -1,0 +1,6 @@
+<!doctype html>
+<h1>Update {{superpower.name}}:</h1>
+<form id="updateSuperpower" action="/superpowers" method="post">
+	Power: <input type="text" name="name" value="{{superpower.name}}"><br>
+</form>
+<button onclick="updateSuperpower({{superpower.ID}})">Update</button>

@@ -1,0 +1,9 @@
+<!doctype html>
+<h1>Update {{character.firstName}} {{character.lastName}} {{character.alias}}:</h1>
+<form id="updateCharacter" action="/characters" method="post">
+	First name: <input type="text" name="firstName" value="{{character.firstName}}"><br>
+	Last name: <input type="text" name="lastName" value="{{character.lastName}}"><br>
+	Alias: <input type="text" name="alias" value="{{character.alias}}"><br>
+	Species: <input type="text" name="species" value="{{character.species}}"><br>
+</form>
+<button onclick="updateCharacter({{character.ID}})">Update</button>

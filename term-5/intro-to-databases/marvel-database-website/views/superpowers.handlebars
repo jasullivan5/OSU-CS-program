@@ -1,0 +1,27 @@
+<!doctype html>
+<select id="tableSelect">
+	<option selected disabled hidden>Choose A Table</option>
+	{{#each tables}}
+	<option value={{table_name}}>{{table_name}}</option>
+	{{/each}}
+</select><br>
+<h1>Superpowers:</h1>
+<table>
+	<thead>
+		<th>Powers</th>
+	</thead>
+	<tbody>
+		{{#each superpowers}}
+		<tr>
+			<td>{{name}}</td>
+			<td id="delete"><button onclick="deleteSuperpower({{ID}})">Delete</button></td>
+			<td id="update"><a href="/superpowers/{{ID}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>	
+	<form id="addSuperpower" action="/superpowers" method="post">
+		Add Superpower:<br>
+		Power: <input type="text" name="name"><br>
+		<input type="submit" value="Submit">
+	</form>
+</table>

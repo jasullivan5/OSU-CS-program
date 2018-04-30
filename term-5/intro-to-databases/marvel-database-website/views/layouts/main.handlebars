@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CS340 Final Project</title>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		{{#each jsScripts}}
+		<script src="/static/{{this}}"></script>
+		{{/each}}
+	</head>
+	<style>
+		td:not(#delete):not(#update), th {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		td, th {
+			padding-right: 5px;
+			padding-left: 5px;
+		}
+	</style>
+	<body>
+		{{{body}}}
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<h1>Update {{film.title}}:</h1>
+<form id="updateFilm" action="/films" method="post">
+	Title: <input type="text" name="title" value="{{film.title}}"><br>
+	Release Date: <input type="date" name="releaseDate" value="{{film.releaseDate}}"><br>
+	Opening Weekend: $<input type="number" name="openingWeekend" value="{{film.openingWeekend}}"><br>
+	Director: <select name="directorID" id="directorSelect">
+		{{#each directors}}
+		<option value={{ID}}>{{firstName}} {{lastName}}</option>
+		{{/each}}
+	</select><br>
+</form>
+<button onclick="updateFilm({{film.ID}})">Update</button>
+<script defer>selectDirector({{film.directorID}});</script>
