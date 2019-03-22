@@ -1,2 +1,2 @@
-In term 5, I took Operating Systems 1 in which I learned about shells, scripts, multi-threading, multi-processing, and multi-programming. Additionally, I learned about process management, inter-process communication, and communication across networks.
+In term 5, I took Operating Systems I in which I learned about shells, scripts, multi-threading, multi-processing, and multi-programming. Additionally, I learned about process management, inter-process communication, and communication across networks.
 I also took Introduction to Databases where I learned to design and develop databases using MySQL. I developed a website that allows a client to access and filter information from a database.
