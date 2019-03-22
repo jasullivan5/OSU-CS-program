@@ -1,0 +1,512 @@
+Result for running tests:
+unittest1.c:
+TESTING fullDeckCount():
+
+Testing for player 1
+curse in hand: 0
+in deck: 0
+in discard: 0
+Total: 0
+Result of fullDeckCount(): 0
+curse in hand: 1
+in deck: 0
+in discard: 0
+Total: 1
+Result of fullDeckCount(): 1
+curse in hand: 1
+in deck: 1
+in discard: 0
+Total: 2
+Result of fullDeckCount(): 2
+curse in hand: 1
+in deck: 1
+in discard: 1
+Total: 3
+Result of fullDeckCount(): 3
+curse in hand: 500
+in deck: 1
+in discard: 1
+Total: 502
+Result of fullDeckCount(): 502
+curse in hand: 500
+in deck: 500
+in discard: 1
+Total: 1001
+Result of fullDeckCount(): 1001
+curse in hand: 500
+in deck: 500
+in discard: 500
+Total: 1500
+Result of fullDeckCount(): 1500
+
+Testing for player 4
+curse in hand: 0
+in deck: 0
+in discard: 0
+Total: 0
+Result of fullDeckCount(): 0
+curse in hand: 1
+in deck: 0
+in discard: 0
+Total: 1
+Result of fullDeckCount(): 1
+curse in hand: 1
+in deck: 1
+in discard: 0
+Total: 2
+Result of fullDeckCount(): 2
+curse in hand: 1
+in deck: 1
+in discard: 1
+Total: 3
+Result of fullDeckCount(): 3
+curse in hand: 500
+in deck: 1
+in discard: 1
+Total: 502
+Result of fullDeckCount(): 502
+curse in hand: 500
+in deck: 500
+in discard: 1
+Total: 1001
+Result of fullDeckCount(): 1001
+curse in hand: 500
+in deck: 500
+in discard: 500
+Total: 1500
+Result of fullDeckCount(): 1500
+
+Replacing curses with treasure_maps, first 1, then all
+Testing for player 1
+curse in hand: 499
+in deck: 500
+in discard: 500
+Total: 1499
+Result of fullDeckCount(): 1499
+treasure_map in hand: 499
+in deck: 500
+in discard: 500
+Total: 1499
+Result of fullDeckCount(): 1499
+curse in hand: 499
+in deck: 499
+in discard: 500
+Total: 1498
+Result of fullDeckCount(): 1498
+treasure_map in hand: 499
+in deck: 499
+in discard: 500
+Total: 1498
+Result of fullDeckCount(): 1498
+curse in hand: 499
+in deck: 499
+in discard: 499
+Total: 1497
+Result of fullDeckCount(): 1497
+treasure_map in hand: 499
+in deck: 499
+in discard: 499
+Total: 1497
+Result of fullDeckCount(): 1497
+curse in hand: 0
+in deck: 499
+in discard: 499
+Total: 998
+Result of fullDeckCount(): 998
+treasure_map in hand: 0
+in deck: 499
+in discard: 499
+Total: 998
+Result of fullDeckCount(): 998
+curse in hand: 0
+in deck: 0
+in discard: 499
+Total: 499
+Result of fullDeckCount(): 499
+treasure_map in hand: 0
+in deck: 0
+in discard: 499
+Total: 499
+Result of fullDeckCount(): 499
+curse in hand: 0
+in deck: 0
+in discard: 0
+Total: 0
+Result of fullDeckCount(): 0
+treasure_map in hand: 0
+in deck: 0
+in discard: 0
+Total: 0
+Result of fullDeckCount(): 0
+
+Testing for player 4
+curse in hand: 499
+in deck: 500
+in discard: 500
+Total: 1499
+Result of fullDeckCount(): 1499
+treasure_map in hand: 499
+in deck: 500
+in discard: 500
+Total: 1499
+Result of fullDeckCount(): 1499
+curse in hand: 499
+in deck: 499
+in discard: 500
+Total: 1498
+Result of fullDeckCount(): 1498
+treasure_map in hand: 499
+in deck: 499
+in discard: 500
+Total: 1498
+Result of fullDeckCount(): 1498
+curse in hand: 499
+in deck: 499
+in discard: 499
+Total: 1497
+Result of fullDeckCount(): 1497
+treasure_map in hand: 499
+in deck: 499
+in discard: 499
+Total: 1497
+Result of fullDeckCount(): 1497
+curse in hand: 0
+in deck: 499
+in discard: 499
+Total: 998
+Result of fullDeckCount(): 998
+treasure_map in hand: 0
+in deck: 499
+in discard: 499
+Total: 998
+Result of fullDeckCount(): 998
+curse in hand: 0
+in deck: 0
+in discard: 499
+Total: 499
+Result of fullDeckCount(): 499
+treasure_map in hand: 0
+in deck: 0
+in discard: 499
+Total: 499
+Result of fullDeckCount(): 499
+curse in hand: 0
+in deck: 0
+in discard: 0
+Total: 0
+Result of fullDeckCount(): 0
+treasure_map in hand: 0
+in deck: 0
+in discard: 0
+Total: 0
+Result of fullDeckCount(): 0
+ALL TESTS PASSED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+TESTING handCard():
+Hand size = 1
+Expecting: Player 1, hand position 0, card curse
+   Result: Player 1, hand position 0, card curse
+Hand size = 500
+Expecting: Player 1, hand position 0, card curse
+   Result: Player 1, hand position 0, card curse
+Expecting: Player 1, hand position 499, card curse
+   Result: Player 1, hand position 499, card curse
+Hand size = 1
+Expecting: Player 4, hand position 0, card curse
+   Result: Player 4, hand position 0, card curse
+Hand size = 500
+Expecting: Player 4, hand position 0, card curse
+   Result: Player 4, hand position 0, card curse
+Expecting: Player 4, hand position 499, card curse
+   Result: Player 4, hand position 499, card curse
+Hand size = 1
+Expecting: Player 1, hand position 0, card treasure_map
+   Result: Player 1, hand position 0, card treasure_map
+Hand size = 500
+Expecting: Player 1, hand position 0, card treasure_map
+   Result: Player 1, hand position 0, card treasure_map
+Expecting: Player 1, hand position 499, card treasure_map
+   Result: Player 1, hand position 499, card treasure_map
+Hand size = 1
+Expecting: Player 4, hand position 0, card treasure_map
+   Result: Player 4, hand position 0, card treasure_map
+Hand size = 500
+Expecting: Player 4, hand position 0, card treasure_map
+   Result: Player 4, hand position 0, card treasure_map
+Expecting: Player 4, hand position 499, card treasure_map
+   Result: Player 4, hand position 499, card treasure_map
+ALL TESTS PASSED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+TESTING kingdomCards():
+   Expected kingdom cards: adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall
+Contents of kingdom cards: adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall
+   Expected kingdom cards: minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, sea_hag, treasure_map
+Contents of kingdom cards: minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, sea_hag, treasure_map
+ALL TESTS PASSED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+Testing numHandCards():
+Testing for player 1
+Player 1: cards in hand = 0, Expected = 0
+Player 1: cards in hand = 500, Expected = 500
+Testing for player 4
+Player 4: cards in hand = 0, Expected = 0
+Player 4: cards in hand = 500, Expected = 500
+ALL TESTS PASSED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+TESTING ADVENTURER CARD
+
+Player 1's hand set to a single test card
+Cards in played pile before playing test card: 0, expected: 0
+Cards in played pile after playing test card: 0, expected: 1
+
+TEST FAILED: Wrong played count
+Enter to continue / 'E' to exit.
+
+Cards in played pile:
+Cards expected in played pile: adventurer
+
+TEST FAILED: Wrong cards
+Enter to continue / 'E' to exit.
+
+Cards in deck before playing test card: 5
+Cards in deck after playing test card: 0, expected: -1
+
+TEST FAILED: Wrong deck count
+Enter to continue / 'E' to exit.
+
+Cards in hand before playing test card: 1
+Cards in hand after playing test card: 2, expected: 2
+Cards in discard before playing test card: 0
+Cards in discard after playing test card: 4, expected: 3
+
+TEST FAILED: wrong discard count
+Enter to continue / 'E' to exit.
+
+Making sure hand has only coins:
+adventurer
+
+TEST FAILED: cards other than coins drawn
+Enter to continue / 'E' to exit.
+
+estate
+
+TEST FAILED: cards other than coins drawn
+Enter to continue / 'E' to exit.
+
+Making sure only non-coins were discarded:
+estate
+estate
+estate
+estate
+Making sure all other game states are unchanged
+Player 2's hand set to a single test card
+Cards in played pile before playing test card: 0, expected: 0
+Cards in played pile after playing test card: 0, expected: 1
+
+TEST FAILED: Wrong played count
+Enter to continue / 'E' to exit.
+
+Cards in played pile:
+Cards expected in played pile: adventurer
+
+TEST FAILED: Wrong cards
+Enter to continue / 'E' to exit.
+
+Cards in deck before playing test card: 10
+Cards in deck after playing test card: 0, expected: 8
+
+TEST FAILED: Wrong deck count
+Enter to continue / 'E' to exit.
+
+Cards in hand before playing test card: 1
+Cards in hand after playing test card: -490, expected: 2
+
+TEST FAILED: Wrong hand count
+Enter to continue / 'E' to exit.
+
+Cards in discard before playing test card: 0
+Cards in discard after playing test card: 0, expected: 8
+
+TEST FAILED: wrong discard count
+Enter to continue / 'E' to exit.
+
+Making sure hand has only coins:
+Making sure only non-coins were discarded:
+Making sure all other game states are unchanged
+
+TEST FAILED: handCount
+Enter to continue / 'E' to exit.
+
+
+TEST FAILED: hand
+Enter to continue / 'E' to exit.
+
+
+TEST FAILED: deckCount
+Enter to continue / 'E' to exit.
+
+ONE OR MORE TESTS FAILED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+TESTING GREAT HALL CARD
+
+Player 1's hand set to a single copy of test card
+Cards in played pile before playing test card 0
+Cards in played pile after playing test card: 1
+Cards in played pile:
+great_hall
+Player 1 cards in deck before playing test card: 5
+Player 1 cards in deck after playing test card: 4
+Player 1 cards in hand before playing test card: 1
+Player 1 cards in hand after playing test card: 1
+Top card of deck before playing test card:
+estate
+Cards in hand after playing test card:
+estate
+Actions before playing test card: 1
+ Actions after playing test card: 2
+Checking that other game states have remained the same.
+Player 2's hand set to a single copy of test card
+Cards in played pile before playing test card 0
+Cards in played pile after playing test card: 1
+Cards in played pile:
+great_hall
+Player 2 cards in deck before playing test card: 10
+Player 2 cards in deck after playing test card: 9
+Player 2 cards in hand before playing test card: 1
+Player 2 cards in hand after playing test card: 1
+Top card of deck before playing test card:
+copper
+Cards in hand after playing test card:
+copper
+Actions before playing test card: 1
+ Actions after playing test card: 2
+Checking that other game states have remained the same.
+ALL TESTS PASSED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+TESTING SMITHY CARD
+
+Player 1's hand set to a single copy of test card
+Cards in played pile before playing test card 0
+Cards in played pile after playing test card: 3
+
+TEST FAILED: Wrong number of cards in played pile
+Enter to continue / 'E' to exit.
+
+Cards in played pile:
+smithy
+estate
+copper
+Player 1 cards in deck before playing test card: 5
+Player 1 cards in deck after playing test ard: 2
+Player 1 cards in hand before playing test card: 1
+Player 1 cards in hand after playing test card: 1
+
+TEST FAILED: Wrong hand count
+Enter to continue / 'E' to exit.
+
+Top 3 cards of deck before playing test card:
+estate
+copper
+copper
+Cards in hand after playing test card:
+copper
+
+TEST FAILED: Cards don't match
+Enter to continue / 'E' to exit.
+
+Checking that other game states have remained the same.
+Player 2's hand set to a single copy of test card
+Cards in played pile before playing test card 0
+Cards in played pile after playing test card: 3
+
+TEST FAILED: Wrong number of cards in played pile
+Enter to continue / 'E' to exit.
+
+Cards in played pile:
+smithy
+copper
+copper
+Player 2 cards in deck before playing test card: 10
+Player 2 cards in deck after playing test ard: 7
+Player 2 cards in hand before playing test card: 1
+Player 2 cards in hand after playing test card: 1
+
+TEST FAILED: Wrong hand count
+Enter to continue / 'E' to exit.
+
+Top 3 cards of deck before playing test card:
+copper
+copper
+copper
+Cards in hand after playing test card:
+copper
+Checking that other game states have remained the same.
+ONE OR MORE TESTS FAILED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+TESTING VILLAGE CARD
+
+Player 1's hand set to a single copy of test card
+Cards in played pile before playing test card 0
+Cards in played pile after playing test card: 1
+Cards in played pile:
+village
+Player 1 cards in deck before playing test card: 5
+Player 1 cards in deck after playing test ard: 4
+Player 1 cards in hand before playing test card: 1
+Player 1 cards in hand after playing test card: 1
+Top card of deck before playing test card:
+estate
+Cards in hand after playing test card:
+estate
+Actions before playing test card: 1
+ Actions after playing test card: 3
+Checking that other game states have remained the same.
+Player 2's hand set to a single copy of test card
+Cards in played pile before playing test card 0
+Cards in played pile after playing test card: 1
+Cards in played pile:
+village
+Player 2 cards in deck before playing test card: 10
+Player 2 cards in deck after playing test ard: 9
+Player 2 cards in hand before playing test card: 1
+Player 2 cards in hand after playing test card: 1
+Top card of deck before playing test card:
+copper
+Cards in hand after playing test card:
+copper
+Actions before playing test card: 1
+ Actions after playing test card: 3
+Checking that other game states have remained the same.
+ALL TESTS PASSED
+File 'dominion.c'
+Lines executed:33.51% of 561
+Creating 'dominion.c.gcov'
+
