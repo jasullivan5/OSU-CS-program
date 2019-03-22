@@ -1,2 +1,1 @@
-run make all #To compile the dominion code
-run ./playdom 30 # to run playdom code
+For my first assignment, I developed unit tests for four functions and four cards of the dominion.c program. These tests are the files cardtest1.c, cardtest2.c, cardtest3.c, cardtest4.c, unittest1.c, unittest2.c, unittest3.c, and unittest4.c. These tests can be compiled and run by typing "make unittestresults". This also produces a test results file for all tests called unittestresults.out.
