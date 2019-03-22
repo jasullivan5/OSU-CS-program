@@ -1,0 +1,1 @@
+In my 8th term, I took Introduction to Networks. I learned about the five layers of the internet protocol stack, configuration and implementation of local area networks and intranets, internet protocols, packet forwarding, and routing.
