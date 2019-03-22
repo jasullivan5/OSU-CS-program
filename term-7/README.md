@@ -1,1 +1,1 @@
-dsf
+In term 7 I took Software Engineering II in which I learned more about software impementation, verification, validation, debugging, and maintenance. I created test plans and wrote several programs for unit tests and random tests of an implementation of the card game Dominion, written in C.
