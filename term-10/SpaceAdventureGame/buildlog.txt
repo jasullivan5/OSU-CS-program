@@ -1,0 +1,94 @@
+In file included from spaceAdventure.h:6:0,
+                 from spaceAdventure.cpp:7:
+Area.h:23:20: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  bool firstEntry = true;
+                    ^
+spaceAdventure.cpp: In function ‘int main()’:
+spaceAdventure.cpp:93:18: error: expected primary-expression before ‘noun’
+   moveFxn(string noun); 
+                  ^
+In file included from /usr/include/_G_config.h:15:0,
+                 from /usr/include/libio.h:32,
+                 from /usr/include/stdio.h:74,
+                 from /usr/include/c++/4.8.2/cstdio:42,
+                 from /usr/include/c++/4.8.2/fstream:41,
+                 from data.h:5,
+                 from Item.h:6,
+                 from Area.h:7,
+                 from spaceAdventure.h:6,
+                 from spaceAdventure.cpp:7:
+Area.h:19:21: error: ‘Exit* Area::launchExit’ is private
+  Exit* launchExit = NULL; 
+                     ^
+spaceAdventure.cpp:143:50: error: within this context
+   if(location->hasItem("Spaceship") && location->launchExit!= NULL{
+                                                  ^
+spaceAdventure.cpp:143:67: error: expected ‘)’ before ‘{’ token
+   if(location->hasItem("Spaceship") && location->launchExit!= NULL{
+                                                                   ^
+In file included from /usr/include/_G_config.h:15:0,
+                 from /usr/include/libio.h:32,
+                 from /usr/include/stdio.h:74,
+                 from /usr/include/c++/4.8.2/cstdio:42,
+                 from /usr/include/c++/4.8.2/fstream:41,
+                 from data.h:5,
+                 from Item.h:6,
+                 from Area.h:7,
+                 from spaceAdventure.h:6,
+                 from spaceAdventure.cpp:7:
+Area.h:20:19: error: ‘Exit* Area::landExit’ is private
+  Exit* landExit = NULL;
+                   ^
+spaceAdventure.cpp:152:50: error: within this context
+   if(location->hasItem("Spaceship") && location->landExit != NULL{
+                                                  ^
+spaceAdventure.cpp:152:66: error: expected ‘)’ before ‘{’ token
+   if(location->hasItem("Spaceship") && location->landExit != NULL{
+                                                                  ^
+spaceAdventure.cpp:176:7: error: jump to case label [-fpermissive]
+  case savegame:
+       ^
+spaceAdventure.cpp:142:9: error:   crosses initialization of ‘Area* location’
+   Area* location = player.getLocation(); 
+         ^
+spaceAdventure.cpp:177:20: error: ‘planets’ was not declared in this scope
+   savegame(player, planets);
+                    ^
+spaceAdventure.cpp:177:27: error: ‘savegame’ cannot be used as a function
+   savegame(player, planets);
+                           ^
+spaceAdventure.cpp: At global scope:
+spaceAdventure.cpp:189:20: error: ISO C++ forbids declaration of ‘moveFxn’ with no type [-fpermissive]
+ moveFxn(string noun){
+                    ^
+spaceAdventure.cpp: In function ‘int moveFxn(std::string)’:
+spaceAdventure.cpp:189:20: error: new declaration ‘int moveFxn(std::string)’
+In file included from spaceAdventure.cpp:7:0:
+spaceAdventure.h:13:6: error: ambiguates old declaration ‘void moveFxn(std::string)’
+ void moveFxn(string noun); 
+      ^
+spaceAdventure.cpp:190:21: error: ‘player’ was not declared in this scope
+    Area* location = player.getLocation(); 
+                     ^
+spaceAdventure.cpp:193:45: error: conversion from ‘Area*’ to non-scalar type ‘Exit’ requested
+     Exit targetExit = location->getExit(noun); 
+                                             ^
+spaceAdventure.cpp:194:33: error: base operand of ‘->’ has non-pointer type ‘Exit’
+     player.removeLife(targetExit->lifeDistance); 
+                                 ^
+spaceAdventure.cpp:195:32: error: base operand of ‘->’ has non-pointer type ‘Exit’
+     player.removeGas(targetExit->gasDistance); 
+                                ^
+spaceAdventure.cpp:198:5: error: expected ‘}’ before ‘else’
+     else if (player.getGas < 0){
+     ^
+spaceAdventure.cpp:206:3: warning: no return statement in function returning non-void [-Wreturn-type]
+   }
+   ^
+spaceAdventure.cpp: At global scope:
+spaceAdventure.cpp:207:3: error: expected unqualified-id before ‘break’
+   break; 
+   ^
+spaceAdventure.cpp:208:1: error: expected declaration before ‘}’ token
+ }
+ ^
