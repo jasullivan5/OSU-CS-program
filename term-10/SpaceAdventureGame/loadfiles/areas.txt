@@ -1,0 +1,17 @@
+User Jacket Shoes Flashlight
+Earth_Moon descriptorFiles/earthmoon_short.txt descriptorFiles/earthmoon_long.txt UIf_files/rocky.txt 0 1 0 0 Human Rock
+Jupiter descriptorFiles/jupiter_short.txt descriptorFiles/jupiter_long.txt UIf_files/tornado.txt 0 0 0 0 Mushroom Rock
+Lost_Moon descriptorFiles/lostMoon_short.txt descriptorFiles/lostMoon_long.txt UIf_files/greenhouse.txt 0 1 0 0 Mushroom Alien Rock
+Mars descriptorFiles/mars_short.txt descriptorFiles/mars_long.txt UIf_files/volcano.txt 0 1 0 0 OpportunityRover Rock
+Mercury descriptorFiles/mercury_short.txt descriptorFiles/mercury_long.txt UIf_files/Mountains.txt 0 0 0 0 Gas Rock
+Neptune_1 descriptorFiles/neptune_1_short.txt descriptorFiles/neptune_1_long.txt UIf_files/windy.txt 1 1 0 0 Rock
+Neptune_2 descriptorFiles/neptune_2_short.txt descriptorFiles/neptune_2_long.txt UIf_files/windy.txt 1 1 0 0 ScrewDriver Rock
+Pluto descriptorFiles/pluto_short.txt descriptorFiles/pluto_long.txt UIf_files/snowy.txt 0 1 0 0 Doohickey Alien Rock
+Pluto_Moon descriptorFiles/pluto_moon_short.txt descriptorFiles/pluto_moon_long.txt UIf_files/crystal.txt 0 1 0 0 Crysallith PickAxe Rock
+Saturn descriptorFiles/saturn_short.txt descriptorFiles/saturn_long.txt UIf_files/cave.txt 0 1 0 0 PowerCrystal Rock
+Sun descriptorFiles/sun_short.txt descriptorFiles/sun_long.txt UIf_files/fire.txt 0 0 0 0 Rock
+Uranus descriptorFiles/uranus_short.txt descriptorFiles/uranus_long.txt UIf_files/windy.txt 0 1 0 0 Rock
+Venus_1 descriptorFiles/venus1_short.txt descriptorFiles/venus1_long.txt UIf_files/castle.txt 0 1 0 0 Alien Rock
+Venus_2 descriptorFiles/venus2_short.txt descriptorFiles/venus2_long.txt UIf_files/cave.txt 0 1 0 0 Gas Alien Rock
+Space descriptorFiles/space_short.txt descriptorFiles/space_long.txt UIf_files/space.txt 0 1 1 0 x 
+Earth descriptorFiles/winning_short.txt descriptorFiles/winning_long.txt UIf_files/winner.txt 0 1 0 0 Human Gas Jacket Flashlight

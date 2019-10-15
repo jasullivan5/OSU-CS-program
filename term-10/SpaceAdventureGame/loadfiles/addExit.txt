@@ -1,0 +1,6 @@
+Neptune_1 Neptune_2
+Neptune_2 Neptune_1
+Venus_1 Venus_2
+Venus_2 Venus_1
+Jupiter Lost_Moon
+Lost_Moon Jupiter

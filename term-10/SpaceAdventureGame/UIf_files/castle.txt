@@ -1,0 +1,14 @@
+       T                     T
+      oOOo                  oOOo
+     oOOOOo                oOOOOo
+    oOOOOOOo      00      oOOOOOOo
+    ********     ****     ********
+     000000     ******     0000000
+     000000    00000000    0000000
+     000000 * 0* 0*0*0*0 * 0000000
+     000000 DDDDDDDDDDDDDD 0000000
+     000000 HDDHDDHDDHDDHD 0000000
+     000000 DDDDDDDDDDDDDD 0000000
+     000000 DDDDD’’’’DDDDD 0000000
+     000000 DDDD’$$$$’DDDD 0000000
+     000000 DDDD’$$$$’DDDD 0000000

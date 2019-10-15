@@ -1,0 +1,17 @@
+Sun 0 40
+Mercury 1 1
+Venus 1 3
+Mars 9 2
+Jupiter 3 5
+Saturn 6 3
+Uranus 5 10
+Neptune_1 3 12
+Neptune_2 5 10
+Pluto 5 3
+Pluto_Moon 6 11
+Venus_1 1 3
+Venus_2 4 2
+Lost_Moon 2 10
+Earth_Moon 2 12
+Space 0 0
+Earth 0 30

@@ -1,0 +1,3 @@
+Welcome to Space Adventure!\n
+newgame ::\n
+loadgame ::\n

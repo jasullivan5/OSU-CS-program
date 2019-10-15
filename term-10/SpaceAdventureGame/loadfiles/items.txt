@@ -1,0 +1,6 @@
+Shoes shoes.txt 1 1
+Gas gas.txt 1 0
+Crysallith crysallith.txt 0 0
+OpportunityRover opportunity_rover.txt 0 0
+Rock rock.txt 0 0
+Jacket jacket.txt 1 1

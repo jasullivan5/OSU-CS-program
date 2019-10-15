@@ -1,0 +1,1 @@
+This is how Opportunity Rover communicated with Earth. It's surprising that it still works, or at least looks like it does.
