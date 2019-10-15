@@ -1,0 +1,59 @@
+{
+	"id": "474059ae-e359-4eb8-8f13-1bfb55e819d2",
+	"name": "cs493-sullijos-finalproject",
+	"values": [
+		{
+			"key": "origin",
+			"value": "https://cs493-sullijos-finalproject.appspot.com",
+			"enabled": true
+		},
+		{
+			"key": "idToken",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "ingredientCount",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "recipeCount",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "user0IngredientCount",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "user0RecipeCount",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "user1IngredientCount",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "user1RecipeCount",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "user0ID",
+			"value": "auth0|5cff18416b45690f066f543c",
+			"enabled": true
+		},
+		{
+			"key": "user1ID",
+			"value": "auth0|5cff0c94cf0a370d840504ce",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-06-11T05:08:47.754Z",
+	"_postman_exported_using": "Postman/7.1.1"
+}
