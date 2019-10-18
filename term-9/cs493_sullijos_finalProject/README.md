@@ -1,1 +1,1 @@
-
+This is my recipes API. It was developed using node.js and express.js. It is not currently hosted, but during my course it was hosted using Google Cloud's App Engine. Google's Cloud Datastore was used to store and manage data.
