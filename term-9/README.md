@@ -1,1 +1,1 @@
-In term 9, I took Cloud Application Development. I learned how to host a REST API on a cloud platform. I developed my own API that allowed users to store a collection of recipes. The API stores 
+In term 9, I took Cloud Application Development. I learned how to host a REST API on a cloud platform. I developed my own API that allows users to save recipes. The API stores users that each have their own lists of recipes and ingredients that can be associated to recipes.
